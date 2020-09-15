@@ -13,15 +13,15 @@ const getVisibleTodos = (todos, filter) => {
             return todos
     }
 }
-
+// 给TodoList传入State
 const mapStateToProps = state => ({
     todos: getVisibleTodos(state.todos, state.visibilityFilter)
 })
-
+// 给TodoList传入dispatch
 const mapDispatchToProps = dispatch => ({
     toggleTodo: id => dispatch(toggleTodo(id))
 })
-
+// 绑定
 export default connect(
     mapStateToProps,
     mapDispatchToProps
