@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { store, actionCreator } from '../redux/store';
+// import { store, actionCreator } from '../redux/store';
+import { store, actionCreator } from '../myredux';
 
 export default class App extends Component {
     constructor(props) {
@@ -9,11 +10,10 @@ export default class App extends Component {
         }
     }
     componentDidMount() {
-        this.setState({ currentBalance: store.getState().balance }, () => {
-            store.subscribe(() => {
-                this.setState({ currentBalance: store.getState().balance });
-            })
-        })
+        console.log(store.getState());
+        // store.subscribe(() => {
+        //     this.setState({ currentBalance: store.getState().balance });
+        // })
     }
     render() {
         return (
