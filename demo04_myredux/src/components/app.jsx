@@ -10,10 +10,10 @@ export default class App extends Component {
         }
     }
     componentDidMount() {
-        console.log(store.getState());
-        // store.subscribe(() => {
-        //     this.setState({ currentBalance: store.getState().balance });
-        // })
+        // console.log(store.getState());
+        store.subscribe(() => {
+            this.setState({ currentBalance: store.getState().balance });
+        })
     }
     render() {
         return (
