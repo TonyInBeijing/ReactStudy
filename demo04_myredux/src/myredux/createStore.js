@@ -19,7 +19,7 @@ const createStore = reducer => {
     // store.getState
     const getState = () => {
         // return state; // 直接返回state
-        return state ? state : reducer();
+        return state;
     }
 
     // 构造store对象
