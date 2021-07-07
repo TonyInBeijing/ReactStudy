@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import JSX from "./components/JSX";
-
+import JSX from "./components/1-JSX";
 
 function App() {
   return (

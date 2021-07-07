@@ -1,3 +1,9 @@
+/**
+ * @description JSX简介
+ * @author YHW 2021-07-07
+ */
+
+
 import React from "react";
 const name = "Tony";
 //  React DOM 使用 camelCase（小驼峰命名）来定义属性的名称
