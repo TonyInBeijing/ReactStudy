@@ -74,12 +74,14 @@ class FormClass extends React.Component {
         return (
             <div>
                 {
-                    [1, 2, 3].map(item => {
-                        {/* 箭头函数 */ }
-                        <button onClick={e => this.deleteRow(item, e)}></button>
-                        {/* Function.prototype.bind */ }
-                        <button onClick={this.deleteRow.bind(this, item)}></button>
-                    })
+                    [1, 2, 3].map(item => (
+                        <div>
+                            {/* 箭头函数 */}
+                            <button onClick={e => this.deleteRow(item, e)}></button>
+                            {/* Function.prototype.bind */}
+                            <button onClick={this.deleteRow.bind(this, item)}></button>
+                        </div>
+                    ))
                 }
             </div>
         );
