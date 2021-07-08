@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import JSX from "./components/1-JSX";
-
+import Clock from "./components/4-State&LifeCycle";
 function App() {
   return (
     <div className="App">
@@ -18,6 +18,7 @@ function App() {
         >
           Learn React
           {JSX}
+          <Clock />
         </a>
       </header>
     </div>
