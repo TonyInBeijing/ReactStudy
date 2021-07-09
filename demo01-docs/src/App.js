@@ -5,6 +5,7 @@ import Clock from "./components/4-State&LifeCycle";
 import Toggle from './components/5-HandlingEvents';
 import LoginControl from './components/6-条件渲染';
 import NumberList from './components/7-列表&key';
+import NameForm from './components/8-表单';
 function App() {
   return (
     <div className="App">
@@ -13,6 +14,7 @@ function App() {
       <Toggle />
       <LoginControl isLoggedIn />
       <NumberList numbers={[1, 2, 3, 4, 5]} />
+      <NameForm />
     </div>
   );
 }
