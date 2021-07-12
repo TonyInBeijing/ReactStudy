@@ -58,5 +58,33 @@ function MyComponent() {
 }
 
 // 基于代码的路由分割
-import {} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+const Home = React.lazy(() => import('./routes/Home'));
+const About = React.lazy(() => import('./routes/About'));
+
+const App = () => (
+    <Router>
+        <Suspense fallback={<div>Loading...</div>}>
+            <Switch>
+                <Route exact path="/" component={Home}></Route>
+                <Route path="/about" component={About}></Route>
+            </Switch>
+        </Suspense>
+    </Router>
+);
+
+// TODO:命名导出
+// React.lazy只支持默认导出（default exports） 如果你想被引入的模块使用命名导出 (named exports) 可以创建一个中间模块，来重新导出为默认模块
+
+// ManyComponents.js
+export const MyComponent = () => (<div>1</div>);
+export const MyUnusedComponent = () => (<div>2</div>);
+
+// MyComponent.js
+
+export { MyComponent as default } from "./ManyComponents.js";
+
+// MyApp.js
+
+const MyComponent = React.lazy(() => import("./MyComponent.js"));
 
